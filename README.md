@@ -19,4 +19,9 @@ At the conclusion of this project we intend to deliver an interactive Shiny appl
 4. Extract indel size and position from VCF using a custom Python script- write to an outfile. 
 5. Plot results in a Shiny application.  
 
+### Project Directory Structure
+#### Data
+#### Scripts
+#### Results
+
  
