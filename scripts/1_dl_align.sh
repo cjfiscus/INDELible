@@ -3,13 +3,13 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=10
 #SBATCH --mem-per-cpu=2G
-#SBATCH --output=%j.stdout
-#SBATCH --error=%j.stderr
+#SBATCH --output=out/%j.stdout
+#SBATCH --error=out/%j.stderr
 #SBATCH --mail-user=cfisc004@ucr.edu
 #SBATCH --mail-type=ALL
 #SBATCH --job-name="dl_al"
 #SBATCH -p batch 
-#SBATCH --array=1-1
+#SBATCH --array=1-175
 
 ## This script downloads, trims, and aligns Illumina reads to A. thaliana reference genome, then converts sam to sorted bam 
 
@@ -25,6 +25,7 @@ FILES=$(head -n $LINE data/file_list.txt | tail -n 1 | cut -f4) # get files to d
 ## get file basename (for subsequent steps) 
 NAME=$(basename "$FILES" | cut -d_ -f1)
 RESULT_DIR=./results/$NAME
+mkdir -v $RESULT_DIR
 
 ## download files 
 for i in $(echo $FILES | tr ";" "\n")
@@ -38,22 +39,17 @@ sickle pe -g -f ./data/"$NAME"_1.fastq.gz -r ./data/"$NAME"_2.fastq.gz -t sanger
 -s $RESULT_DIR/"$NAME"_singles.fq.gz
 
 ## Determine read group
-a="'@RG\tID:" ; c="\tSM:" ; d="'" 
 SAMPLE=$(head -n $LINE data/file_list.txt | tail -n 1 | cut -f2)
-READGROUP=$a$SLURM_ARRAY_TASK_ID$c$SAMPLE$d # Example: '@RG\tID:1\tSM:SRS155653'
 
 ## align with bwa, need to have matching samples but different readgroup  
-bwa mem -t 10 -M -R $READGROUP data/Arabidopsis_thaliana.TAIR10.fa $RESULT_DIR/"$NAME"_1_trimmed.fq.gz $RESULT_DIR/"$NAME"_2_trimmed.fq.gz > $RESULT_DIR/"$NAME".sam 
+bwa mem -t 10 -M -R "@RG\tID:""$SLURM_ARRAY_TASK_ID""\tSM:""$SAMPLE" data/Arabidopsis_thaliana.TAIR10.fa $RESULT_DIR/"$NAME"_1_trimmed.fq.gz $RESULT_DIR/"$NAME"_2_trimmed.fq.gz > $RESULT_DIR/"$NAME".sam 
 
 ## sam to sorted bam
 samtools view -bS $RESULT_DIR/"$NAME".sam | samtools sort -T $RESULT_DIR/temp_Pt - -o $RESULT_DIR/"$NAME".bam
 
-## index BAM
-samtools index $RESULT_DIR/"$NAME".bam
-
-## export mapping stats
-samtools flagstat $RESULT_DIR/"$NAME".bam | gzip > ./results/"$NAME"_aln_stats.txt.gz 
+## mark duplicates
+samtools rmdup $RESULT_DIR/"$NAME".bam ./results/"$NAME"_nodups.bam && mv ./results/"$NAME"_nodups.bam ./results/"$NAME".bam
 
 ## cleanup temp files
-#rm -r $RESULT_DIR
-#rm data/"$NAME"*
+rm -r $RESULT_DIR
+rm data/"$NAME"*
