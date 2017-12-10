@@ -1,0 +1,10 @@
+name: shiny_app_3
+title:
+username:
+account: cjfiscus
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 246387
+bundleId: 1123880
+url: https://cjfiscus.shinyapps.io/shiny_app_3/
+when: 1512767711.49455
