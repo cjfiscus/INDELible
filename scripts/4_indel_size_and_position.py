@@ -28,5 +28,5 @@ dat = {"indel_ID" : indel_ID, "position" : position, "size" : size, "chromosome"
 dat_df = pd.DataFrame(dat)
 
 # Save data as .csv
-dat_df.to_csv(dat_df)
+dat_df.to_csv(dat_df,sep='\t')
 

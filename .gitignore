@@ -3,3 +3,4 @@
 *.vcf
 *.vcf.*
 *swp*
+.DS_Store
