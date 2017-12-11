@@ -13,12 +13,12 @@ Cao, J. et al. Whole-genome sequencing of multiple Arabidopsis thaliana populati
 At the conclusion of this project we intend to deliver an interactive Shiny application. We will plot the distribution of indels identified in these samples genome-wide and subsetted by chromosome in genomic windows with the window size chosen by the user. We will also plot median indel size for each of these windows. 
 
 ### Pipeline
-1. Download reference genome and index with bwa (0_setup_ref.sh)- produce an indexed reference genome.  
-2. Download, quality trim, and align sequencing reads to the *A. thaliana* reference genome (1_dl_align.sh)- produce BAM files. 
-3. Identify variants with freebayes (2_call_snps)- produce vcf. 
-4. Filter variants with vcffilter (3_filter_vcf.sh)- produce filtered vcf. 
-5. Extract indel size and position from filter VCF using a custom Python script (4_indel_size_and_position.py) write to an outfile. 
-6. Plot results in a Shiny application (shiny_app/).  
+1. Download reference genome and index with bwa (**0_setup_ref.sh**)- produce an indexed reference genome.  
+2. Download, quality trim, and align sequencing reads to the *A. thaliana* reference genome (**1_dl_align.sh**)- produce BAM files. 
+3. Identify variants with freebayes (**2_call_snps**)- produce vcf. 
+4. Filter variants with vcffilter (**3_filter_vcf.sh**)- produce filtered vcf. 
+5. Extract indel size and position from filter VCF using a custom Python script (**4_indel_size_and_position.py**) write to an outfile. 
+6. Plot results in a Shiny application (**shiny_app/**).  
 
 To run the pipeline run each script in order (0_setup_ref.sh, 1_dl_align.sh etc.). 
 
