@@ -1,0 +1,18 @@
+---
+title: "INDELible"
+author: "Glen Morrison & Christopher Fiscus"
+fontsize: 11pt
+output:
+  pdf_document: default
+geometry: margin=1in
+---
+## Rationale
+
+## Data 
+
+## Pipeline  
+
+## Results 
+
+## Acknowledgements
+The authors would like to thank Professor Jason Stajich for guidance and suggestions.  
