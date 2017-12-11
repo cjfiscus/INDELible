@@ -37,9 +37,10 @@ Project report in .pdf along with scripts used to render the report.
 0_setup_ref.sh  
 1_dl_align.sh  
 2_call_snps.sh  
-3_filter_vcf.sh
-4_indel_size_and_position.py
+3_filter_vcf.sh  
+4_parse_vcf.py  
 5_parse_genes.py    
+dl_annot.sh   
 dl_results.sh
 
 #### shiny_app
