@@ -18,9 +18,8 @@ At the conclusion of this project we intend to deliver an interactive Shiny appl
 3. Identify variants with freebayes (**2_call_snps**)- produce vcf. 
 4. Filter variants with vcffilter (**3_filter_vcf.sh**)- produce filtered vcf. 
 5. Extract indel size and position from filter VCF using a custom Python script (**4_indel_size_and_position.py**) write to an outfile. 
-6. Plot results in a Shiny application (**shiny_app/**).  
-
-To run the pipeline run each script in order (0_setup_ref.sh, 1_dl_align.sh etc.). 
+6. Annotate parsed indels with boolean values corresponding to presence within a coding region (**5_parse_genes.py**). 
+7. Plot results in a Shiny application (**shiny_app/**).  
 
 ### Results  
 The filtered vcf produced by step 4 above is hosted on figshare at the following [link](https://figshare.com/s/77cb4ee59e590e5058d8). It has been compressed with BGZip to save disk space. 
@@ -39,7 +38,8 @@ Project report in .pdf along with scripts used to render the report.
 1_dl_align.sh  
 2_call_snps.sh  
 3_filter_vcf.sh
-4_indel_size_and_position.py    
+4_indel_size_and_position.py
+5_parse_genes.py    
 dl_results.sh
 
 #### shiny_app
