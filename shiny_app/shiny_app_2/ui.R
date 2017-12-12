@@ -1,11 +1,11 @@
 library(shiny)
 library(ggplot2)
 
-# Define UI for miles per gallon application
+# Define ui
 shinyUI(pageWithSidebar(
 
 	# Application title
-	headerPanel(p(em("Arabidopsis thaliana"), "Indels")),
+	headerPanel(p("Indels in 80", em("Arabidopsis"), "genomes")),
 
 	sidebarPanel(
 	selectInput(inputId = "chrm_select",

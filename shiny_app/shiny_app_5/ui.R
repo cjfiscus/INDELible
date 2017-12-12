@@ -5,7 +5,7 @@ library(shiny)
 shinyUI(pageWithSidebar(
 
   # Application title
-  headerPanel(p(em("Arabidopsis thaliana"), "Indels")),
+  headerPanel(p("Indels in 80", em("Arabidopsis"), "genomes")),
 
 	sidebarPanel(
 
