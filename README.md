@@ -17,7 +17,7 @@ At the conclusion of this project we intend to deliver an interactive Shiny appl
 2. Download, quality trim, and align sequencing reads to the *A. thaliana* reference genome (**1_dl_align.sh**)- produce BAM files. 
 3. Identify variants with freebayes (**2_call_snps**)- produce vcf. 
 4. Filter variants with vcffilter (**3_filter_vcf.sh**)- produce filtered vcf. 
-5. Extract indel size and position from filter VCF using a custom Python script (**4_indel_size_and_position.py**) write to an outfile. 
+5. Extract indel size and position from filter VCF using a custom Python script (**4_parse_vcf.py**) write to an outfile. 
 6. Annotate parsed indels with boolean values corresponding to presence within a coding region (**5_parse_genes.py**). 
 7. Plot results in a Shiny application (**shiny_app/**).  
 

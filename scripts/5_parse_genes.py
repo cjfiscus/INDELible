@@ -35,17 +35,16 @@ LineNum=1
 for Line in Indels:
     annot="FALSE" # reset to default 
     if LineNum > 1: # skip first line 
-        cat=Line.split("\t")
-
+        cat=Line.split("\t") # cat[2] is chr, cat[3] is start 
         positions = GeneList.get(cat[2]) # gene pos for that chr 
         positions = positions.split(",")
-
+        
         for pos in positions:
-            end=pos.split(":")
-            if cat[3] > pos[1]: # indel position greater than end
+            end=pos.split(":") # end[0] is start, end[1] is end
+            if int(cat[3]) > int(end[1]): # indel position greater than end
                 pass
             else: # indel position less than end 
-                if pos[0] > cat[3]: # indel within region
+                if int(cat[3]) > int(end[0]): # indel within region
                     annot="TRUE"
                     break
                 else: # indel not within region 
