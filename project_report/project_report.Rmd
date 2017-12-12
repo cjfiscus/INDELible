@@ -38,7 +38,7 @@ Python3 script that takes an an input a VCF4.1 file, extracts indel position, re
 
 **5_parse_genes.py**  
 This script annotates the indels parsed by script 4 with a boolean value corresponding to whether the indel is located within a coding region. This script takes as input a [list of genes](https://github.com/biodataprog/teamproject-indelible/blob/master/data/genes.txt) and positions derived from the *A. thaliana* genome annotation (gff3), which was downloaded from [EnsemblGenomes](http://ensemblgenomes.org/).  
-Python3 script that takes the tab delimited file produced by 5_parse_genes.py as an input file, references a gff 
+Python3 script that takes the tab delimited file produced by 5_parse_genes.py as an input file, references the positions of genes in the Arabidopsis thaliana genome (contained in /data/genes.txt file), and adds a boolean column ("InCodingRegion") to input file. Input amd output file names are hard-coded into this script.
 
 ### Shiny Application 
 (description of scripts included here)
