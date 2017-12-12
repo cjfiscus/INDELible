@@ -47,12 +47,11 @@ This script annotates the indels parsed by script 4 with a boolean value corresp
 To facilitate sharing the filtered vcf file produced by script 3 above and to make this project reproducible and independent of the high performance computing center (i.e. biocluster) at UC Riverside, the data was uploaded to figshare. This script creates a results folder and downloads the filtered vcf file to this directory.  
 
 **dl_annot.sh**  
-
-
+This script downloads the annotation of the *A. thaliana* genome from EnsemblGenomes and creates a [list of gene positions](https://github.com/biodataprog/teamproject-indelible/blob/master/data/genes.txt) that are then utilized by script 5. 
 
 ## Results 
 
 (describe results and include screenshots from shiny application)
 
 ## Acknowledgements
-The authors would like to thank Professor Jason Stajich for guidance and suggestions throughout the course of this project. All code is hosted on github at this [link](https://github.com/biodataprog/teamproject-indelible). Our Shiny application was deployed to the cloud with Shinyapps.io and can be accessed [here](link to shiny app).   
+The authors would like to thank Professor Jason Stajich for guidance and suggestions throughout the course of this project. All code is hosted on github at this [link](https://github.com/biodataprog/teamproject-indelible). The Shiny application was deployed to the cloud with Shinyapps.io and can be accessed [here](link to shiny app). CF wrote scripts 0, 1, 2, 3, 5, and both "additional scripts". GM wrote script 4 and the shiny app. CF and GM both contributed equally to this manuscript.     
