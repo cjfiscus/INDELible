@@ -42,11 +42,14 @@ This script annotates the indels parsed by script 4 with a boolean value corresp
 ### Shiny Application 
 shiny_app_1 plots the counts of indels across each chromosome and the mitochondrion and plastid. There are interacive controls for the width of the windows in which counts are taken, a chomosome/organelle selecter drop-down, an indel type selector and a switch for a vertical line at the approximte posistion of each centromere. Additionally, there is a drop-down to switch between a Kolmogorov-Smirnov test against a uniforma and Possion probability distribution on windows counts (p-values plotted under chromosome number label.
 
-shiny_app_2 plots histograms of indel length for all, or each, chromosome/organelle. Positive values are insertions and negative values are deletions. There are interactive controls for narrowing the range of values visualized.
+shiny_app_2 plots histograms of indel length for all, or each, chromosome/organellar genome. Positive values are insertions and negative values are deletions. There are interactive controls for narrowing the range of values visualized.
 
 shiny_app_3 plots a scatter plot of indel length by indel position, color coded by whether the indel is in a coding or non-coding region. It has controls and layout familiar from previous apps.
 
-shiny
+shiny_app_4 plots the ratio of insertions to deletions within variable window widths across each chromosome/organellar genome. This has the same structure as shiny_app_1.
+
+shiny_app_5 plots discrete values histograms of the modulo of indel length by three for coding and non-coding regions. It has interactive controls familiar from previous apps. 
+
 ### Additional Scripts
 **dl_results.sh**  
 To facilitate sharing the filtered vcf file produced by script 3 above and to make this project reproducible and independent of the high performance computing center (i.e. biocluster) at UC Riverside, the data was uploaded to figshare. This script creates a results folder and downloads the filtered vcf file to this directory.  
@@ -56,6 +59,7 @@ This script downloads the annotation of the *A. thaliana* genome from EnsemblGen
 
 ## Results 
 
+![Shiny app 1.](/rhome/gmorr004/teamproject-indelible/project_report/screenshots/shiny_app_1_screenshot.png)
 (describe results and include screenshots from shiny application)
 
 ## Acknowledgements
