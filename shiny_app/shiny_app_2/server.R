@@ -4,26 +4,25 @@ library(ggplot2)
 # 
 server <- function(input, output){
 
-#	reactive({
-#		if(input$chrm_select == "All"){chrm <- 1:5}else{
-#			chrm <- as.numeric(input$chrm_select)}
-#		dat <- dat[dat$Chromosome %in% chrm, ]
-#  	})
  	# Generate a plot 
 
 	output$scatterPlot <- renderPlot({
 		if(input$chrm_select == "All"){
-			g <- ggplot(dat, aes(Length)) +
+			g <- ggplot(dat, aes(length)) +
 				geom_histogram(bins = input$nbins, color = "gray30") +
-				facet_grid(Chromosome ~ .) +
-				xlim(input$lower_lim, input$upper_lim)
+				facet_grid(chromosome ~ .) +
+				xlim(input$lower_lim, input$upper_lim) +
+				xlab("Length (bases)") + ylab("Count") +
+				theme(axis.title = element_text(size = 14))
 			g
 			}else{
-			chrm <- as.numeric(input$chrm_select)
-			dat <- dat[dat$Chromosome %in% chrm, ]
-			g <- ggplot(dat, aes(Length)) +
+			dat2 <- dat[dat$chromosome %in% input$chrm_select, ]
+
+			g <- ggplot(dat2, aes(length)) +
 				geom_histogram(bins = input$nbins, color = "gray30") +
-				xlim(input$lower_lim, input$upper_lim)
+				xlim(input$lower_lim, input$upper_lim) +
+				xlab("Length (bases)") + ylab("Count") +
+				theme(axis.title = element_text(size = 14))
 			g
 			}
 	})

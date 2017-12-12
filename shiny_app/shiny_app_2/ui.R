@@ -10,7 +10,7 @@ shinyUI(pageWithSidebar(
 	sidebarPanel(
 	selectInput(inputId = "chrm_select",
                   label = "Chromosome:",
-                  choices = c("All", as.character(1:5))),
+                  choices = c("All", as.character(1:5), "Mt", "Pt")),
 	sliderInput("nbins", 
 			"Number of bins:", 
 			min = 20,
@@ -18,14 +18,14 @@ shinyUI(pageWithSidebar(
 			value = 50),
 	sliderInput("lower_lim", 
 			"Lower limit:", 
-			min = min(dat$Length),
+			min = min(dat$length),
 			max = 0, 
-			value = min(dat$Length)),
+			value = min(dat$length)),
 	sliderInput("upper_lim", 
 			"Upper limit:", 
 			min = 0,
-			max = max(dat$Length), 
-			value = max(dat$Length))
+			max = max(dat$length), 
+			value = max(dat$length))
 	),
   	mainPanel(
 		plotOutput("scatterPlot")
