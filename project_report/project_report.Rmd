@@ -38,12 +38,15 @@ Python3 script that takes an an input a VCF4.1 file, extracts indel position, re
 
 **5_parse_genes.py**  
 This script annotates the indels parsed by script 4 with a boolean value corresponding to whether the indel is located within a coding region. This script takes as input a [list of genes](https://github.com/biodataprog/teamproject-indelible/blob/master/data/genes.txt) and positions derived from the *A. thaliana* genome annotation (gff3), which was downloaded from [EnsemblGenomes](http://ensemblgenomes.org/).  
-Python3 script that takes the tab delimited file produced by 5_parse_genes.py as an input file, references the positions of genes in the Arabidopsis thaliana genome (contained in /data/genes.txt file), and adds a boolean column ("InCodingRegion") to input file. Input amd output file names are hard-coded into this script.
 
 ### Shiny Application 
-(description of scripts included here)
+shiny_app_1 plots the counts of indels across each chromosome and the mitochondrion and plastid. There are interacive controls for the width of the windows in which counts are taken, a chomosome/organelle selecter drop-down, an indel type selector and a switch for a vertical line at the approximte posistion of each centromere. Additionally, there is a drop-down to switch between a Kolmogorov-Smirnov test against a uniforma and Possion probability distribution on windows counts (p-values plotted under chromosome number label.
 
+shiny_app_2 plots histograms of indel length for all, or each, chromosome/organelle. Positive values are insertions and negative values are deletions. There are interactive controls for narrowing the range of values visualized.
 
+shiny_app_3 plots a scatter plot of indel length by indel position, color coded by whether the indel is in a coding or non-coding region. It has controls and layout familiar from previous apps.
+
+shiny
 ### Additional Scripts
 **dl_results.sh**  
 To facilitate sharing the filtered vcf file produced by script 3 above and to make this project reproducible and independent of the high performance computing center (i.e. biocluster) at UC Riverside, the data was uploaded to figshare. This script creates a results folder and downloads the filtered vcf file to this directory.  
