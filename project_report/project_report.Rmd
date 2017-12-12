@@ -34,9 +34,11 @@ For computational efficiency, only 4 alleles at each site were considered when r
 Slurm script that uses the *vcffilter* command from [vcflib](https://github.com/vcflib/vcflib) to filter the vcf file produced by *freebayes*. We used a hard filter, keeping only indels that had at least 10 reads and a quality score of 20. 
 
 **4_parse_vcf.py**  
+Python3 script that takes an an input a VCF4.1 file, extracts indel position, reference sequence, alternate sequence, and chromosome number. It return a tab delimited .txt file. Command line arguments number 1 and 2 are used to specify names of input and output files, respectively.
 
 **5_parse_genes.py**  
 This script annotates the indels parsed by script 4 with a boolean value corresponding to whether the indel is located within a coding region. This script takes as input a [list of genes](https://github.com/biodataprog/teamproject-indelible/blob/master/data/genes.txt) and positions derived from the *A. thaliana* genome annotation (gff3), which was downloaded from [EnsemblGenomes](http://ensemblgenomes.org/).  
+Python3 script that takes the tab delimited file produced by 5_parse_genes.py as an input file, references a gff 
 
 ### Shiny Application 
 (description of scripts included here)
