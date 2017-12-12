@@ -6,6 +6,9 @@ Information about accessions used in this study.
 **bam_list.txt**  
 A list of the bam files produced by this project, used for SNP calling. 
 
+**centromeres.txt**  
+Approximate locations of centromeres in the *A. thaliana* genome. Curated from genome annotation gff3 file. 
+
 **genes.txt**  
 A list of gene positions in the *A. thaliana* genome. Created with the dl_annot.sh script.  
 
