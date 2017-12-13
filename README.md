@@ -33,6 +33,9 @@ The Shiny app that we produced is available [here](https://cjfiscus.shinyapps.io
 #### project_report  
 Project report in .pdf along with scripts used to render the report. 
 
+#### results
+output from script 5 above, plotted in Shiny app
+
 #### Scripts
 0_setup_ref.sh  
 1_dl_align.sh  
