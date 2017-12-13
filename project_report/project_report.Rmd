@@ -58,9 +58,20 @@ To facilitate sharing the filtered vcf file produced by script 3 above and to ma
 This script downloads the annotation of the *A. thaliana* genome from EnsemblGenomes and creates a [list of gene positions](https://github.com/biodataprog/teamproject-indelible/blob/master/data/genes.txt) that are then utilized by script 5. 
 
 ## Results 
+![Shiny app 1.](/rhome/gmorr004/teamproject-indelible/project_report/screenshots/shiny_app_1_screenshot.png)  
+**Figure 1.** Visualizing the distibution of indels across the chromosomes and organllar genomes the most noticeable pattern is the deficit of indels near the centromeres. This may due to biological reasons, but may simply be an artifact of the sequencing technology which is less powerful in this region of mostly heterochromatin. The distribution of indels,at all but a few very large window lengths is statistically different from a uniform or Poisson distribution though this is likely due to the pattern seen near the centromeres. The plastid genome has a single region where there are no recorded indels and the mitochondrial genome has several such regions. Both insertions and deletions are similarly distributed on a given chromosome/organellar genome, though this should will be looked at more closely.
 
-![Shiny app 1.](/rhome/gmorr004/teamproject-indelible/project_report/screenshots/shiny_app_1_screenshot.png)
-(describe results and include screenshots from shiny application)
+![Shiny app 2.](/rhome/gmorr004/teamproject-indelible/project_report/screenshots/shiny_app_2_screenshot.png)  
+**Figure 2.** The distribution of indel lengths is remarkably similiar across all five chromosomes. There are marginally, but consistently, more deletions than insertions, but otherwise the distribution is approximately symmetrical with most indels being a few bases long. The distributions are similiar on the organllar genomes, though more noisy possibly due to the small number of indels (compared to the chromosomes).
+
+![Shiny app 3.](/rhome/gmorr004/teamproject-indelible/project_report/screenshots/shiny_app_3_screenshot.png)  
+**Figure 3.** The is no clear relationship between genomic position and indel length. The strikingly flat spread of points here shows this. The relation (i.e. no relationship) is similar in coding and non-coding regions of the chromosomes and also for the organaller genomes.
+
+![Shiny app 4.](/rhome/gmorr004/teamproject-indelible/project_report/screenshots/shiny_app_4_screenshot.png)  
+**Figure 4.** The ratio is of insertions to deletions is variable acorss the chromosomes though there is no clear pattern. The position of lowest rato value on each chromosome coincides with the position of the centromere. However, the ratio of insertions to deletions holds very constant across the organellar genomes.
+
+![Shiny app 3.](/rhome/gmorr004/teamproject-indelible/project_report/screenshots/shiny_app_5_screenshot.png)  
+**Figure 5.** Coding and non-coding regions have similar densities of three-indivisible indels. This is an interesting observation as we would expect to find relatively fewer of these indels given the potential of such indels to have deleterious effects.
 
 ## Acknowledgements
 The authors would like to thank Professor Jason Stajich for guidance and suggestions throughout the course of this project. All code is hosted on github at this [link](https://github.com/biodataprog/teamproject-indelible). The Shiny application was deployed to the cloud with Shinyapps.io and can be accessed [here](link to shiny app). CF wrote scripts 0, 1, 2, 3, 5, and both "additional scripts". GM wrote script 4 and the shiny app. CF and GM both contributed equally to this manuscript.     
