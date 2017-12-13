@@ -46,7 +46,6 @@ server <- function(input, output) {
 				color = InCodingRegion)) +
 				geom_point(alpha = 0.1) +
 				facet_grid(chromosome ~ .) +
-				xlim(input$lower_lim, input$upper_lim)  +
 				xlab("Position") + ylab("Length (bases)") +
 				theme(axis.title = element_text(size = 14)) +
 				guides(colour = guide_legend(override.aes = list(alpha = 1)))
@@ -57,14 +56,12 @@ server <- function(input, output) {
 				g <- ggplot(dat2, aes(x = position, y = length, 
 					color = InCodingRegion)) +
 					geom_point() +
-					xlim(input$lower_lim, input$upper_lim)  +
 					xlab("Position") + ylab("Length (bases)") +
 					theme(axis.title = element_text(size = 14))
 				}else{
 				g <- ggplot(dat2, aes(x = position, y = length, 
 					color = InCodingRegion)) +
-					geom_point(alpha = 0.1) +
-					xlim(input$lower_lim, input$upper_lim)  +
+					geom_point(alpha = 0.1)  +
 					xlab("Position") + ylab("Length (bases)") +
 					theme(axis.title = element_text(size = 14)) + 
 					guides(colour = guide_legend(override.aes = list(alpha = 1)))
